@@ -21,10 +21,11 @@ https://pub.dev/packages/url_launcher
 `canLaunch`が`false`になってしまったら、以下のように、URLをエンコードしてから再度チェックしてみてください。
 
 ```dart:url_launcher.dart
+Future<void> launchUrl(String url) async {
 final _canLaunch = await canLaunch(url);
  if (_canLaunch) {
     final success = await launch(url);
-    print('success : $url');
+    print('success :$success $url');
     return;
   }
   final encodedUrl = Uri.encodeFull(url);
@@ -34,6 +35,7 @@ final _canLaunch = await canLaunch(url);
     return;
   }
   await launch(encodedUrl);
+}
 ```
 ## 最後に
 プロジェクト内に、このようなメソッドを作成して、url_launcherを使用する場合は、この処理をくぐらせるようにしています。
