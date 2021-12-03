@@ -6,7 +6,7 @@ topics: ["Flutter","Dart","正規表現"] # タグ。["markdown", "rust", "aws"]
 published: false # 公開設定（falseにすると下書き）
 ---
 
-## はじめに
+<!-- ## はじめに
 Flutterでアプリ開発をしていると、emailログインを実装する機会は必ずあるといっても過言ではないと思います。
 その際のemailのバリデーションで、正しいEメールの形式かをチェックする必要があると思います。
 そこで正規表現(Regular Expression)という暗号みたいなものにぶつかったので、メモしていこうかなと。
@@ -31,4 +31,4 @@ https://www.mlab.im.dendai.ac.jp/~yamada/java/regex/
 ```dart
 RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
 ```
-​
+​ -->
