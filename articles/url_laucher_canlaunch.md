@@ -7,18 +7,20 @@ published: true # 公開設定（falseにすると下書き）
 ---
 
 ## はじめに
-url_launcherを使っていて、URLが開けるはずなのに、
+flutterのパッケージurl_launcherを使っていて、URLが開けるはずなのに、
 `canLaunch(url)`が`false`になってしまう..
 という問題があったので、メモしておこうかなと。
 
 https://pub.dev/packages/url_launcher
 
-​
-## 原因
-そのURLにはカタカナが含まれていました。  
-以下のように`canLaunch`が`false`になってしまったら、URLをエンコードしてからチェックしてみてください。
+## URLが開けなかった原因
+そのURLにはカタカナが含まれていました。日本語がURLに含まれているのがおそらく原因だったと思います。
+例えばこんな感じに(このURLは存在しません)
+`https://zenn.dev/articles/url_laucher_canlaunch/テスト１`
 
-```dart
+`canLaunch`が`false`になってしまったら、以下のように、URLをエンコードしてから再度チェックしてみてください。
+
+```dart:url_launcher.dart
 final _canLaunch = await canLaunch(url);
  if (_canLaunch) {
     final success = await launch(url);
@@ -33,7 +35,6 @@ final _canLaunch = await canLaunch(url);
   }
   await launch(encodedUrl);
 ```
+## 最後に
 プロジェクト内に、このようなメソッドを作成して、url_launcherを使用する場合は、この処理をくぐらせるようにしています。
-​
-
-​
+もしプロジェクト内で、`canLaunch(url)`と`launch(url)`をバラバラで使用している場合は、上記のようなコードをメソッド化しておいて、使用すると良いかもしれません。
