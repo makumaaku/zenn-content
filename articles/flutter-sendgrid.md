@@ -16,3 +16,6 @@ SendGridError: The from address does not match a verified Sender Identity. Mail 
 ```
 
 ## 差出人の認証が必要
+
+## package
+https://pub.dev/packages/sendgrid_mailer
