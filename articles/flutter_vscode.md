@@ -24,7 +24,7 @@ https://qiita.com/naru0504/items/99495c4482cd158ddca8
 `Command⌘ + Shift⇧ +P`
 
 ### ドキュメントのフォーマット
-`Command⌘ + option⌥ +F`
+`option⌥ + Shift⇧ +F`
 
 ### Widgetをラップする(クイックフィックス)
 `Command⌘ + .`
@@ -34,3 +34,6 @@ https://qiita.com/naru0504/items/99495c4482cd158ddca8
 
 ### 行を下にコピー
 `Shift⇧ + option⌥ + ↓`
+
+### コード置換
+`option⌥ + Command⌘ + F`
