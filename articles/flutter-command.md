@@ -213,3 +213,6 @@ https://qiita.com/bonny_d/items/c5f0b0c2d2fdac8734f6
 早めにマスターしましょう！
 
 (よく使用するコマンドなども追加予定です)
+
+TwitterではFlutterの技術関連の発信をしています！
+https://twitter.com/marksaito4
