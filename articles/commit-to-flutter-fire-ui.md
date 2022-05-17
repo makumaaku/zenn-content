@@ -1,18 +1,14 @@
 ---
-title: "flutter_fire_uiにプルリク出してみた(翻訳)" # 記事のタイトル
+title: "FlutterFire UIにプルリク出してみた話(翻訳)" # 記事のタイトル
 emoji: "🔥" # アイキャッチとして使われる絵文字（1文字だけ）
 type: "tech" # tech: 技術記事 / idea: アイデア記事
 topics: ["Flutter","Firebase"] # タグ。["markdown", "rust", "aws"]のように指定する
-published: false # 公開設定（falseにすると下書き）
+published: true # 公開設定（falseにすると下書き）
 ---
 
 ## はじめに
-今回は技術関連の記事というよりかは、経験を発信してみようかなと思います。 
 僕がお話しするのはタイトルにある通り、firebaseの公式パッケージであるflutter_fire_uiにプルリクを出してみたという経験についてです。 
 flutter_fire_uiはflutter3のアナウンスの中にも含まれているパッケージです！  
-
-https://zenn.dev/reinf0rce/articles/88f3cf377de9ac#%E3%81%9D%E3%81%AE%E4%BB%96
-https://www.youtube.com/watch?v=gZQ0b6FsNpQ
 
 github  
 https://github.com/firebase/flutterfire/tree/master/packages/flutterfire_ui
@@ -67,7 +63,7 @@ class MyApp extends StatelessWidget {
 ```
 [flutter_fire_uiのREADME](https://pub.dev/packages/flutterfire_ui)より引用  
 
-しかし、僕が最初に触った頃は画面の文字は全て英語でした。  
+しかし、僕が最初に触った頃は実装後の画面の文字は全て英語でした。  
 「日本人が本格的に使えるようになるのはもうちょい先か...」  
 と思っていました。  
 
@@ -157,6 +153,9 @@ https://github.com/firebase/flutterfire/pull/8366#issuecomment-1084481916
 「大体のイメージはついたかな。」  
 という状態になっていただけたなら幸いです。 
 日本も負けじとがんばりましょう！　　
+
+Twitterでは、Flutterの技術関連の発信をしています！
+https://twitter.com/marksaito4
 
 
 
