@@ -129,6 +129,10 @@ https://github.com/firebase/flutterfire/pull/8110#issuecomment-1047662948
 
 https://www.kamo-it.org/member/
 
+## リリースされました
+バージョン0.4.0で反映されていると思います。  
+https://pub.dev/packages/flutterfire_ui/changelog#040
+
 ## 感想
 さすがに有名どころであるfirebaseのパッケージなので、チェックも厳重ですね。  
 しかも、オープンソースにコミットをしたこともなかったので、余計にハードルが高く感じました。  
