@@ -54,6 +54,13 @@ enum Water {
 
 ```
 
+ちなみに`$name`の`name`は Dart の 2.15 から追加されている機能ですね。
+
+```dart
+final w = Water.frozen;
+print(w.name); //frozen
+```
+
 ## toString()を使ってみる
 
 この状態で print してみると、
