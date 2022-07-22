@@ -1,6 +1,6 @@
 ---
-title: "FlutterWeb+Firebase Hostingで環境毎の管理ツールを作成する" # 記事のタイトル
-emoji: "" # アイキャッチとして使われる絵文字（1文字だけ）
+title: "FlutterWeb+Firebase Hostingで環境分けした管理ツールを作成する" # 記事のタイトル
+emoji: "👨‍🏭" # アイキャッチとして使われる絵文字（1文字だけ）
 type: "tech" # tech: 技術記事 / idea: アイデア記事
 topics: ["Flutter,FlutterWeb"] # タグ。["markdown", "rust", "aws"]のように指定する
 published: false # 公開設定（falseにすると下書き）
@@ -348,3 +348,6 @@ Firebase の config 情報が含まれていると思います。　　
 Flutter プロジェクトを管理ツール用に別で作ったほうがよかったのかな..とも思いつつ。  
 この記事の使えるは参考にしていただけたらなと思います。  
 何かご意見やご指摘があれば、ぜひお願いします！
+
+Twitter では Flutter に関する情報を発信しています！
+https://twitter.com/marksaito4
