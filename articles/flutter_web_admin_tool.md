@@ -152,7 +152,7 @@ https://qiita.com/Umigishi-Aoi/items/32a46255bb935417ab3d#flutterfire-cli-%E3%81
 開発環境の場合は、以下で`FlAVOR=dev`が取得できます。
 
 ```
-flutter run -d chrome --dart-define=FlAVOR=dev
+flutter run -d chrome --dart-define=FLAVOR=dev
 ```
 
 **参考**
