@@ -9,7 +9,7 @@ published: false # 公開設定（falseにすると下書き）
 ## はじめに
 
 今回は Flutter Web + Firebase Hosting を用いて、管理ツールを作成する機会があったので、その手順を記録しておこうと思います。  
-環境は以下の 3 つを用意します。
+以下の 3 つの環境での管理ツールを用意します。
 
 - 開発(dev)
 - ステージング(stg)
@@ -17,7 +17,7 @@ published: false # 公開設定（falseにすると下書き）
 
 ## 既存の Firebase プロジェクトで web をサポートする
 
-既存のプロジェクトが web をサポートしていない場合は、以下のコマンドを叩けば OK です。
+もしも既存のプロジェクトが web をサポートしていない場合は、以下のコマンドを叩けば OK です。
 
 ```bash
 flutter create .
@@ -35,15 +35,17 @@ https://docs.flutter.dev/get-started/web#add-web-support-to-an-existing-app
 - `flutter build web`
 - `firebase deploy --only hosting`
 
-わかりやすい記事があるので以下を参考にしてみてください。　　
-今回は、`開発(dev)`,`ステージング(stg)`,`本番(prod)`の 3 つの環境があるので、Firebase のプロジェクトも 3 つ用意しています。  
-必要な環境数に応じて、作成してください。
+基本的なデプロイ部分の詳細はこの記事では割愛させていただきます。  
+わかりやすい記事があるので以下を参考にしてみてください。
 
-参考
+**参考**
 https://www.flutter-study.dev/host-web-app/hosting
 https://zenn.dev/pressedkonbu/articles/deploy-flutter-web-app-with-firebase-hosting
 
-## 管理ツールのフォルダ構成
+今回は、`開発(dev)`,`ステージング(stg)`,`本番(prod)`の 3 つの環境があるので、Firebase のプロジェクトも 3 つ用意しています。  
+必要な環境数に応じて、作成してください。
+
+## 管理ツール用のソースコードのディレクトリ構成
 
 `lib`ファイルの中に`web`ディレクトリを作成し、その中に管理ツールのソースコードを書いていくことにしました。
 
@@ -99,7 +101,7 @@ FirebaseOptions cannot be null when creating the default app
     options: //ここで設定する
 ```
 
-参考
+**参考**
 https://zenn.dev/maropook/articles/f82c98a56b14ca
 
 ### コマンドによる firebase_options.dart の自動生成
@@ -114,7 +116,7 @@ flutterfire configure
 Firebase のプロジェクトに登録されているプラットフォーム毎の、config 情報を自動生成してくれます。  
 最高に便利ですが、環境分けには対応できないようです..
 
-コマンドの参考
+**コマンドの参考**
 https://qiita.com/Umigishi-Aoi/items/32a46255bb935417ab3d#flutterfire-cli-%E3%81%AE%E5%88%A9%E7%94%A8
 
 ### コマンド以外での firebase の config 情報を設定
@@ -153,7 +155,7 @@ https://qiita.com/Umigishi-Aoi/items/32a46255bb935417ab3d#flutterfire-cli-%E3%81
 flutter run -d chrome --dart-define=FlAVOR=dev
 ```
 
-参考
+**参考**
 https://zenn.dev/riscait/articles/separating-environments-in-flutter
 
 ## web/index.html の環境切り替え
@@ -245,7 +247,7 @@ ln -s dev/index.html index.html
 ln -fs dev/index.html index.html
 ```
 
-参考
+**参考**
 https://qiita.com/takeoverjp/items/bb1576e90a8a495db4b3
 
 #### シンボリックリンクの確認
@@ -262,9 +264,17 @@ ll
 index.html -> dev/index.html
 ```
 
-参考
+**参考**
 https://qiita.com/ngyuki/items/621830bc53aaf2923f73
 https://s-port.shinwart.com/tech-column/kawatama03/
+
+### その他の手法
+
+こちらの方法も参考になりそうです。  
+運用しやすい方法を選んでいただければと思います。
+
+**参考**
+https://zenn.dev/tsuruo/articles/773a5a7ca14924#firebase-sdk%E3%81%AE%E8%A8%AD%E5%AE%9A%E3%82%92flavor%E3%81%94%E3%81%A8%E3%81%AB%E5%88%86%E3%81%91%E3%81%9F%E3%81%84%E5%A0%B4%E5%90%88
 
 ## 環境毎に Firebase Hosting へのデプロイ
 
@@ -285,10 +295,10 @@ firebase deploy --only hosting
 ```json:.firebaserc
 {
   "projects": {
-    "dev": "project-id-dev",
-    "stg": "project-id-stg",
-    "prod": "roject-id-prod",
-    "default": "project-id-dev"
+    "dev": "example-project-id-dev",
+    "stg": "example-project-id-stg",
+    "prod": "example-project-id-prod",
+    "default": "example-project-id-dev"
   }
 }
 ```
@@ -313,7 +323,7 @@ prod へ向ける
 firebase use prod
 ```
 
-参考
+**参考**
 https://stackoverflow.com/questions/66560305/flutter-firebase-setting-different-deployment-targets-for-ios-android-and-w/66560306#66560306
 
 ### index.html の参照先を確認
@@ -340,6 +350,15 @@ Firebase の config 情報が含まれていると思います。　　
 自分の想定したデプロイ先と`projectId`が一致しているかを確認してみてください。
 
 こちらの確認後に、`firebase deploy --only hosting`でデプロイするのが良いかと思います。
+
+## FlutterWeb でのその他 Tips
+
+- Flutter Web でキャッシュを消す
+  https://zenn.dev/kboy/articles/03d5e212c3b51e
+
+- FlutterWeb のリロードで `currentUser` が `null` になってしまう問題
+  https://qiita.com/hummer/items/65b296803f8b200838bd
+  https://zenn.dev/kboy/articles/4c398560a2518f
 
 ## 最後に
 
